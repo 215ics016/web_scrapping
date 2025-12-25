@@ -136,7 +136,7 @@ GEMINI_MODEL=gemini-1.5-flash
 
 # OpenRouter API (Optional - for chatbot)
 OPENROUTER_API_KEY=your_openrouter_api_key_here
-OPENROUTER_MODEL=anthropic/claude-3.5-sonnet
+OPENROUTER_MODEL=nvidia/nemotron-3-nano-30b-a3b:free
 
 ```
 
