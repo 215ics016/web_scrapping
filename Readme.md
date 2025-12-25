@@ -154,21 +154,6 @@ https://www.worldometers.info/coronavirus/
 https://en.wikipedia.org/wiki/List_of_countries_by_population
 ```
 
-### Environment Variables Reference
-
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `GEMINI_API_KEY` | - | Google Gemini API key (required) |
-| `GEMINI_MODEL` | `gemini-1.5-flash` | Gemini model version |
-| `OPENROUTER_API_KEY` | - | OpenRouter API key (optional) |
-| `HEADLESS_MODE` | `true` | Run browser in headless mode |
-| `BROWSER_TIMEOUT` | `60000` | Page load timeout (ms) |
-| `VIEWPORT_WIDTH` | `1920` | Browser viewport width |
-| `VIEWPORT_HEIGHT` | `1080` | Browser viewport height |
-| `OUTPUT_FOLDER` | `output` | Output directory path |
-| `LOG_LEVEL` | `INFO` | Logging level |
-| `MAX_RETRIES` | `3` | Maximum retry attempts |
-
 ---
 
 ## Usage
