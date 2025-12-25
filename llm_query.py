@@ -143,7 +143,7 @@ class DataLoader:
 class LLMQueryBot:
     """LLM-powered chatbot for querying scraped data using OpenRouter"""
     
-    def __init__(self, openrouter_api_key: str, model: str = "nvidia/nemotron-3-nano-30b-a3b:free", site_url: str = "", site_name: str = "Web Scraper LLM Query"):
+    def __init__(self, openrouter_api_key: str, model: str = "anthropic/claude-3.5-sonnet", site_url: str = "", site_name: str = "Web Scraper LLM Query"):
         self.client = OpenAI(
             base_url="https://openrouter.ai/api/v1",
             api_key=openrouter_api_key,

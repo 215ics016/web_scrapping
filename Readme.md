@@ -113,19 +113,35 @@ A sophisticated, AI-powered web scraping system that intelligently extracts stru
 cd "d:\web scrapping assesment"
 ```
 
-### Step 2: Install Python Dependencies
+### Step 2: Create Virtual Environment (Recommended)
+
+Creating a virtual environment isolates project dependencies from your system Python.
+
+**Windows:**
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+**Linux/macOS:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### Step 3: Install Python Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 3: Install Playwright Browsers
+### Step 4: Install Playwright Browsers
 
 ```bash
 playwright install chromium
 ```
 
-### Step 4: Configure Environment Variables
+### Step 5: Configure Environment Variables
 
 Create a `.env` file in the project root:
 
