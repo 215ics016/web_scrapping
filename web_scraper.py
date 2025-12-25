@@ -508,7 +508,6 @@ class DynamicExtractor:
                 # Parse based on column name
                 if 'Name' in header or 'name' in header.lower():
                     # Extract cryptocurrency name and symbol
-                    # Pattern: "BitcoinBTCBuy" -> name: "Bitcoin", symbol: "BTC"
                     match = re.search(r'^([A-Za-z\s]+?)([A-Z]{2,10})(?:Buy)?$', cell_value)
                     if match:
                         row_dict['name'] = match.group(1).strip()
@@ -520,7 +519,6 @@ class DynamicExtractor:
                     row_dict['price'] = cell_value
                     
                 elif 'Market Cap' in header or 'market' in header.lower():
-                    # Extract readable market cap: "$1.76T$1,758,063,677,964" -> "$1.76T"
                     match = re.search(r'(\$[\d.]+[KMBT]?)', cell_value)
                     if match:
                         row_dict['market_cap'] = match.group(1)
@@ -536,7 +534,6 @@ class DynamicExtractor:
                         row_dict['volume_24h'] = cell_value
                         
                 elif 'Supply' in header or 'supply' in header.lower():
-                    # Extract circulating supply: "19.96MBTC" -> "19.96M", symbol: "BTC"
                     match = re.search(r'([\d.]+[KMBT]?)([A-Z]+)?', cell_value)
                     if match:
                         row_dict['circulating_supply'] = match.group(1)
@@ -596,10 +593,8 @@ class ImageExtractor:
         self.config = config
         self.logger = logger
         
-        # Initialize Gemini Vision
         if config.gemini_api_key:
             genai.configure(api_key=config.gemini_api_key)
-            # Use gemini-1.5-flash-latest or gemini-1.5-pro-latest for v1 API
             self.vision_model = genai.GenerativeModel('gemini-1.5-flash-latest')
         else:
             self.vision_model = None
@@ -690,7 +685,6 @@ class ImageExtractor:
                 except Exception as e:
                     self.logger.warning(f"Error processing image {idx}: {e}")
             
-            # If screenshot provided, perform OCR on full page screenshot
             if screenshot_path and os.path.exists(screenshot_path):
                 try:
                     self.logger.info("Performing OCR on full page screenshot...")

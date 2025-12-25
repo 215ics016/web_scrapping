@@ -96,7 +96,6 @@ class DataLoader:
                         table_id = table.get('table_id', f'table_{idx}')
                         headers = table.get('headers', [])
                         
-                        # Use structured_rows if available, otherwise fallback to rows
                         structured_rows = table.get('structured_rows', [])
                         rows = table.get('rows', [])
                         
@@ -185,20 +184,18 @@ Data Context:
         ] + self.conversation_history
         
         try:
-            # Prepare extra headers for OpenRouter (optional but recommended)
             extra_headers = {}
             if self.site_url:
                 extra_headers["HTTP-Referer"] = self.site_url
             if self.site_name:
                 extra_headers["X-Title"] = self.site_name
             
-            # Call OpenRouter API via OpenAI SDK
             chat_completion = self.client.chat.completions.create(
                 extra_headers=extra_headers if extra_headers else None,
                 model=self.model,
                 messages=messages,
-                temperature=0.3,  # Lower temperature for more factual responses
-                max_tokens=1000,  # Reduced to work with limited credits
+                temperature=0.3, 
+                max_tokens=1000, 
                 top_p=0.9
             )
             
