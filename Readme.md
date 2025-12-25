@@ -34,40 +34,40 @@ A sophisticated, AI-powered web scraping system that intelligently extracts stru
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    Web Scraper System                    │
+│                    Web Scraper System                   │
 ├─────────────────────────────────────────────────────────┤
-│                                                           │
-│  ┌─────────────┐      ┌──────────────────────────┐     │
-│  │   Config    │──────│  PageTypeDetector        │     │
-│  │  Manager    │      │  (Analyzes HTML/JS)      │     │
-│  └─────────────┘      └──────────────────────────┘     │
-│         │                       │                        │
+│                                                         │
+│  ┌─────────────┐      ┌──────────────────────────┐      │
+│  │   Config    │──────│  PageTypeDetector        │      │
+│  │  Manager    │      │  (Analyzes HTML/JS)      │      │ 
+│  └─────────────┘      └──────────────────────────┘      │ 
+│         │                       │                       │
 │         ├───────────────────────┴──────────┐            │
-│         ▼                                   ▼            │
-│  ┌─────────────────┐            ┌──────────────────┐   │
-│  │ Static Extractor│            │ Dynamic Extractor│   │
-│  │ (BeautifulSoup) │            │  (Playwright)    │   │
-│  └─────────────────┘            └──────────────────┘   │
-│         │                                   │            │
-│         └───────────┬───────────────────────┘            │
-│                     ▼                                    │
+│         ▼                                   ▼           │
+│  ┌─────────────────┐            ┌──────────────────┐    │
+│  │ Static Extractor│            │ Dynamic Extractor│    │
+│  │ (BeautifulSoup) │            │  (Playwright)    │    │ 
+│  └─────────────────┘            └──────────────────┘    │
+│         │                                   │           │
+│         └───────────┬───────────────────────┘           │
+│                     ▼                                   │
 │            ┌──────────────────┐                         │
 │            │  Image Extractor │                         │
 │            │  (OCR + Vision)  │                         │
 │            └──────────────────┘                         │
-│                     │                                    │
-│                     ▼                                    │
+│                     │                                   │
+│                     ▼                                   │
 │            ┌──────────────────┐                         │
 │            │ Data Normalizer  │                         │
 │            │  (Gemini LLM)    │                         │
 │            └──────────────────┘                         │
-│                     │                                    │
-│                     ▼                                    │
+│                     │                                   │
+│                     ▼                                   │
 │            ┌──────────────────┐                         │
 │            │  JSON Output +   │                         │
 │            │   Screenshots    │                         │
 │            └──────────────────┘                         │
-│                                                           │
+│                                                         │
 └─────────────────────────────────────────────────────────┘
          │
          ▼
@@ -76,7 +76,7 @@ A sophisticated, AI-powered web scraping system that intelligently extracts stru
 ├─────────────────────────────────────────────────────────┤
 │  • Loads extracted JSON data                            │
 │  • Interactive CLI for natural language queries         │
-│  • Uses OpenRouter API (Claude 3.5 Sonnet)             │
+│  • Uses OpenRouter API (Claude 3.5 Sonnet)              │
 │  • Context-aware responses based on scraped data        │
 └─────────────────────────────────────────────────────────┘
 ```
